@@ -39,7 +39,9 @@ namespace DailyReport_CSharp
             if (args.Length > 0)
             {
                 dates[0] = args[0];
-                dates[1] = dates[0].Replace("/0", "/"); // 将2013/05/03这样的日期转为2013/5/3 
+                dates[1] = dates[0].Replace("/0", "/");							// 将2013/05/03这样的日期转为2013/5/3 
+				dates[2] = dates[0].Remove(dates[0].LastIndexOf("/0") + 1, 1);	// 将2013/05/03这样的日期转为2013/05/3 
+				dates[3] = dates[0].Remove(dates[0].IndexOf("/0") + 1, 1);		// 将2013/05/03这样的日期转为2013/5/03 
 				isDebug = true;
             }
 
